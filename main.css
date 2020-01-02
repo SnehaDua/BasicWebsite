@@ -2,26 +2,26 @@ html, body, h1, h2, h3, h4, ul, ol, li, p, a {
   padding: 0;
   border: 0;
   margin: 0;
+  font: inherit;
+  font-size: 100%;
 }
 h1 {
   color: #000000;
-  margin: 0 0 15px 0;
-  text-align: center;
-}
-h2 {
-  color: #000000;
   margin: 15px 0 15px;
   text-align: center;
+  font-family: 'Verdana', 'sans-serif';
 }
-h3 {
+h2 {
   color: #333333;
   margin: 20px 0 5px 0;
   border-bottom: 1px solid #aaaaaa;
   padding: 2px;
+  font-family: 'Verdana', 'sans-serif';
 }
-h4 {
+h3 {
   color: #666666;
   margin: 10px 0 10px 0;
+  font-family: 'Verdana', 'sans-serif';
 }
 p {
   color: #444444;
@@ -37,143 +37,7 @@ li {
   margin-bottom: 5px;
 }
 body {
-  padding: 0;
-}
-ol {
-  padding: 0 0 0 20px;
-}
-.nav {
-  padding: 0;
-  text-align: center;
-}
-.nav li {
-  display: inline;
-  padding-right: 20px;
-}
-.nav li:last-child {
-  padding-right: 0;
-}
-.day-time {
-  color: #444444;
-  margin: 0 0 3px 0;
-}
-.concert-location {
-  color: #888888;
-  margin: 0 0 15px 0;
-}
-.header {
-  padding: 15px;
-}
-.content-section {
-  padding: 15px;
-  width: 450px;
-  margin: 0 auto;
-}
-.album {
-  border: 2px dashed #bbbbbb;
-  padding: 5px 10px 5px 10px;
-  margin-bottom: 5px;
-}
-.bands-list h3 {
-  border:0;
-  margin:0;
-  
-}
-.bands-list{
-  list-style-type:none;
-  padding-left:0;
-}
-.bands-list a{
-  text-decoration: none;
-  color:#ff2244;
-}html, body, h1, h2, h3, h4, ul, ol, li, p, a {
-  padding: 0;
-  border: 0;
-  margin: 0;
-}
-h1 {
-  color: #000000;
-  margin: 15px 0 15px;
-  text-align: center;
-}
-h2 {
-  color: #333333;
-  margin: 20px 0 5px 0;
-  border-bottom: 1px solid #aaaaaa;
-  padding: 2px;
-}
-h3 {
-  color: #666666;
-  margin: 10px 0 10px 0;
-}
-p {
-  color: #444444;
-  margin: 0 0 10px 0;
-}
-a {
-  color: #440000;
-}
-ul {
-  padding: 0 0 0 30px;
-}
-li {
-  margin-bottom: 5px;
-}
-body {
-  padding: 0;
-  background: #555555 url(images/bg-tile.png) top left repeat;
-}
-ol {
-  padding: 0 0 0 20px;
-}
-.nav {
-  padding: 0;
-  text-align: center;
-}
-.nav li {
-  display: inline;
-  padding-right: 20px;
-}
-.nav li:last-child {
-  padding-right: 0;
-}
-.nav a {
-  color: #ee932a;
-}
-html, body, h1, h2, h3, h4, ul, ol, li, p, a {
-  padding: 0;
-  border: 0;
-  margin: 0;
-}
-h1 {
-  color: #000000;
-  margin: 15px 0 15px;
-  text-align: center;
-}
-h2 {
-  color: #333333;
-  margin: 20px 0 5px 0;
-  border-bottom: 1px solid #aaaaaa;
-  padding: 2px;
-}
-h3 {
-  color: #666666;
-  margin: 10px 0 10px 0;
-}
-p {
-  color: #444444;
-  margin: 0 0 10px 0;
-}
-a {
-  color: #440000;
-}
-ul {
-  padding: 0 0 0 30px;
-}
-li {
-  margin-bottom: 5px;
-}
-body {
+  font-family: 'Garamond', 'Serif' ;
   padding: 0;
   background: #555555 url(images/bg-tile.png) top left repeat;
 }
@@ -218,19 +82,19 @@ ol {
   margin-bottom: 5px;
   background-color: #ffffff;
 }
-.bands-list {
+.band-list {
   list-style-type: none;
   padding-left: 0;
 }
-.bands-list h2 {
+.band-list h2 {
   border-bottom: 0;
   margin: 0;
 }
-.bands-list a {
+.band-list a {
   text-decoration: none;
   color: #ff2244;
 }
-.bands-list li {
+.band-list li {
   border: 1px solid #555555;
   background-color: #ffffff;
   height: 120px;
@@ -250,11 +114,10 @@ ol {
   color: #ffffff;
   font-size: 28px;
 }
-.bands-list img {
+.band-list img {
   float: left;
   padding-right: 15px;
 }
 .album img {
-  float:right;
-  
+  float: right;
 }
