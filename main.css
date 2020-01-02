@@ -19,18 +19,19 @@ h2 {
   border-bottom: 1px solid #aaaaaa;
   padding: 2px;
   font-family: Verdana, sans-serif;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
 }
 h3 {
   color: #666666;
   margin: 10px 0 10px 0;
   font-family: Verdana, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
 }
 p {
   color: #444444;
   margin: 0 0 10px 0;
+  line-height: 24px;
 }
 a {
   color: #440000;
@@ -40,6 +41,7 @@ ul {
 }
 li {
   margin-bottom: 5px;
+  line-height: 22px;
 }
 body {
   padding: 0;
