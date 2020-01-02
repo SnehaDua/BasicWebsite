@@ -129,3 +129,20 @@ ol {
 .album img {
   float: right;
 }
+label{
+  display: block;
+  font-weight: bold;
+}
+input{
+  display: block;
+  margin-bottom:15px;
+  width:445px;
+  font-size:20px;
+}
+textarea{
+
+  display:block;
+  margin-bottom: 15px;
+  width:445px;
+  font-size:20px;
+}
