@@ -129,20 +129,27 @@ ol {
 .album img {
   float: right;
 }
-label{
+textarea {
+  display: block;
+  margin-bottom: 15px;
+  width: 445px;
+  font-size: 20px;
+}
+label {
   display: block;
   font-weight: bold;
 }
-input{
+input {
   display: block;
-  margin-bottom:15px;
-  width:445px;
-  font-size:20px;
-}
-textarea{
-
-  display:block;
   margin-bottom: 15px;
-  width:445px;
-  font-size:20px;
+  font-size: 20px;
+}
+input[type=submit]{
+  width:165px;
+}
+input[type=checkbox], label[for=on-tour]{
+display:inline;  
+}
+input[type=text]{
+  width: 445px;
 }
