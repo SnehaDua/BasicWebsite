@@ -9,19 +9,24 @@ h1 {
   color: #000000;
   margin: 15px 0 15px;
   text-align: center;
-  font-family: 'Verdana', 'sans-serif';
+  font-family: Verdana, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
 }
 h2 {
   color: #333333;
   margin: 20px 0 5px 0;
   border-bottom: 1px solid #aaaaaa;
   padding: 2px;
-  font-family: 'Verdana', 'sans-serif';
+  font-family: Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
 }
 h3 {
   color: #666666;
   margin: 10px 0 10px 0;
-  font-family: 'Verdana', 'sans-serif';
+  font-family: Verdana, sans-serif;
+  font-size: 20px;
 }
 p {
   color: #444444;
@@ -37,9 +42,10 @@ li {
   margin-bottom: 5px;
 }
 body {
-  font-family: 'Garamond', 'Serif' ;
   padding: 0;
   background: #555555 url(images/bg-tile.png) top left repeat;
+  font-family: Garamond, serif;
+  font-size: 16px;
 }
 ol {
   padding: 0 0 0 20px;
