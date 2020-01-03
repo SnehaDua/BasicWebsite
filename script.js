@@ -22,6 +22,7 @@ Write a boolean expression that checks whether two numbers are not equal and ret
 12!=34
 
 ................................................................................
+
 Start with Quoth the raven: "Nevermore!" and build the following output in a single string, using special characters for the newline, tab stop, and double quotation marks:
 
 Quoth the raven:
@@ -30,3 +31,6 @@ Quoth the raven:
 "Quoth the raven:\n\t\"Nevermore!\""
 ....................................................................................
 
+Create a single string with exactly 33 characters. Then, access the length of the newly created string with the .length property.
+--------
+"an apple a day keeps the doctor a" .length
