@@ -22,3 +22,11 @@ Write a boolean expression that checks whether two numbers are not equal and ret
 12!=34
 
 ................................................................................
+Start with Quoth the raven: "Nevermore!" and build the following output in a single string, using special characters for the newline, tab stop, and double quotation marks:
+
+Quoth the raven:
+    "Nevermore!"
+----------
+"Quoth the raven:\n\t\"Nevermore!\""
+....................................................................................
+
