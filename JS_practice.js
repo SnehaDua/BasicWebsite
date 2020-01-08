@@ -193,3 +193,49 @@ result = lookup[val];
 phoneticLookup("charlie");
 
 ----------------------------------------------------------
+// Setup
+var myObj = {
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+};
+
+function checkObj(checkProp) {
+  // Your Code Here
+if (myObj.hasOwnProperty(checkProp)){
+  return myObj[checkProp];
+}else {
+   return "Not Found";
+}
+ 
+}
+
+// Test your code by modifying these values
+checkObj("gift");
+
+--------------------------------------------------------------------
+// Setup
+var myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+// Only change code below this line
+
+var secondTree = myPlants[1].list[1]; // Change this line
+
+---------------------------------------------------------------------------
