@@ -112,3 +112,84 @@ if(strokes == 1){
 // Change these values to test
 golfScore(5, 4);
 --------------------------------------------------------
+var count = 0;
+
+function cc(card) {
+  // Only change code below this line
+
+switch(card){
+  case 2:
+  case 3:
+  case 4:
+  case 5:
+  case 6:
+  count ++;
+  break;
+  
+  case 7:
+  case 8:
+  case 9:
+  break;
+
+  case 10:
+  case 'J':
+  case 'Q':
+  case 'K':
+  case 'A':
+  count --;
+  break;
+}
+
+if (count > 0){
+return (count+" Bet");
+}else {
+  return (count+" Hold");}
+  // Only change code above this line
+}
+
+// Add/remove calls to test your function.
+// Note: Only the last will display
+cc(2); cc(3); cc(4); cc(5); cc(6);
+----------------------------------------------------------------
+// Setup
+function phoneticLookup(val) {
+  var result = "";
+
+  // Only change code below this line
+var lookup = {
+"alpha" : "Adams",
+"bravo" : "Boston",
+"charlie": "Chicago",
+ "delta": "Denver",
+ "echo": "Easy",
+ "foxtrot": "Frank"
+};
+result = lookup[val];
+/*  switch(val) {
+    case "alpha":
+      result = "Adams";
+      break;
+    case "bravo":
+      result = "Boston";
+      break;
+    case "charlie":
+      result = "Chicago";
+      break;
+    case "delta":
+      result = "Denver";
+      break;
+    case "echo":
+      result = "Easy";
+      break;
+    case "foxtrot":
+      result = "Frank";
+  }
+*/
+  // Only change code above this line
+  return result;
+}
+
+// Change this value to test
+phoneticLookup("charlie");
+
+----------------------------------------------------------
