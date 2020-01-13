@@ -400,3 +400,18 @@ function randomRange(myMin, myMax) {
 var myRandom = randomRange(5, 15);
 
 -----------------------------------------------------------------------------------------------
+
+function convertToInteger(str) {
+return parseInt(str, 2);
+}
+
+convertToInteger("10011");
+
+---------------------------------------------------------------------------------------------------
+
+function checkSign(num) {
+return num>0? "positive" : num<0? "negative" :"zero";
+}
+
+checkSign(10);
+-----------------------------------------------------------------------------------------------
