@@ -415,3 +415,24 @@ return num>0? "positive" : num<0? "negative" :"zero";
 
 checkSign(10);
 -----------------------------------------------------------------------------------------------
+//Only change code below this line
+function countdown(n){
+
+ return n<1? []: [n].concat(countdown(n-1));
+}
+
+
+console.log(countdown(5)); // [5, 4, 3, 2, 1]
+-------------------------------------------------------------------------------------------
+
+function countdown(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const arr = countdown(n - 1);
+    arr.unshift(n);
+    return arr;
+  }
+}
+
+----------------------------------------------------------------------------------------
