@@ -3,57 +3,61 @@
 
 //function declaration
 void spaces(void);
-void hash (int);
+void hash(int);
 
 
 int main(void)
 {
     //get height from the user in the range 1-8
     int  height = 0;
-    int i,j,k, count=0;
-  do{
+    int i, j, k, count = 0;
+    do
+    {
     height = get_int("height : ");  
     }
-    while((height<1)||(height>8));
-   //-------------------------------------------------------------
-     for (i =1; i<=height; i++){
-     
-    // for spaces in front
-         k = height - i;
-         while(k>0){
-             spaces();
-             k--;
-         }
+    while ((height < 1) || (height > 8));
+  
+    
+    
+    for (i = 1; i <= height; i++)
+    {
+        // for spaces in front
+        k = height - i;
+        while (k > 0)
+        {
+            spaces();
+            k--;
+        }
          
-         count=0; // resets count for fixed spaces in the middle 
-         do {
-             hash(i);  
-             count++;
-             if(count==1){
-                 spaces(); spaces();
-             }
-         }while(count<2);
-         printf("\n");
-     }
-
-    /*
-     Testing - Display
-    printf("height is : %i\n", height);
-    hash(1);    spaces();     hash(2);
-    */
-   
+        count = 0; // resets count for fixed spaces in the middle 
+        do
+        {
+            hash(i);
+            count++;
+            if (count == 1)
+            {
+                spaces();
+                spaces();
+            }
+        }
+        while (count < 2);
+        printf("\n");
+    }
     return 0; 
 }
 
 //function for printing spaces
-void spaces(void){
+void spaces(void)
+{
     printf(" ");
 };
 
 //function for printing #
-void hash (num){
-    for(int x = 1; x <=num ; x++){ 
-    printf("#");
+void hash(num)
+{
+    for (int x = 1; x <= num ; x++)
+    { 
+        printf("#");
     }
 };
 
