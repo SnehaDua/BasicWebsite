@@ -78,7 +78,7 @@ const magic = () => {
 const magic = () => new Date(); 
  
 -----------------------------------------------------------------------------
-Write Arrow Functions with Parameters
+Write Arrow Functions with Parameterss
 -----------------------------------------------------------------------------
 const myConcat = (arr1, arr2) => {
   "use strict";
