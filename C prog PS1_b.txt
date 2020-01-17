@@ -35,3 +35,82 @@ int main(void){
     
     return 0;
 }
+
+
+---------------------------------------------------------------------------------------------------
+#include <cs50.h>
+#include <stdio.h>
+
+//function declarations
+//string CardType(long, int);
+void checkSum ( long , int);
+
+//AmericanEX - 15-digit, start with 34 or 37
+//MasterCard - 16-digit, start with 51,52,53,54, or 55
+//Visa - 13-digit and 16-digit, start with 4
+//CheckSum
+
+
+int main(void){
+    
+    //declaring variables
+    long CardNum,CN;
+    int len = 0, count = 0;
+    
+    //getting user input( no of digits shd be 13,15, or 16)
+    do
+    {
+        len =0;
+        CardNum = get_long("Please Enter your Card Number : ");
+        CN = CardNum;
+        while (CN != 0)
+        {
+            CN /= 10;
+            ++len;
+        }
+        printf("length : %d\n", len);
+                
+    }
+    while ((len < 13) || (len > 16) || (len == 14));
+    printf(" your cardlength is %d\n", len);
+    printf(" your card number in the main loop is %ld\t %ld\n", CardNum, CN);
+   checkSum(CardNum, len);
+    return 0;
+}
+
+/*
+string CardType(cn, l)
+{
+    string Type;
+    
+    return Type;
+}
+*/
+
+void checkSum ( long num , int length)
+{
+    printf("number:    %ld\t %d\n", num,length);
+    long odd_places_sum = 0, even_places_sum = 0;
+    for (int i=length; i>0; i--)
+    { 
+        if(i % 2 == 0)
+        { 
+            printf("number is: %ld\n", num);
+            odd_places_sum += (num % 10);
+            num /= 10;
+            printf("Oddsum %ld\t %ld\n", odd_places_sum,num);
+        } else 
+        {
+             printf(" now number is: %ld\n", num);
+            even_places_sum += ((num % 10) * 2);
+            num /= 10;
+             printf("eeeeeeeven %ld\n", even_places_sum,);
+        }
+        
+        
+        num /= 10;
+        
+    }
+
+};
+
