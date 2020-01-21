@@ -41,14 +41,29 @@ int main(void){
 #include <cs50.h>
 #include <stdio.h>
 
-//function declarations
-//string CardType(long, int);
-void checkSum ( long , int);
+
+//long reverse (long);
+//void checkSum ( long , int);
 
 //AmericanEX - 15-digit, start with 34 or 37
 //MasterCard - 16-digit, start with 51,52,53,54, or 55
 //Visa - 13-digit and 16-digit, start with 4
 //CheckSum
+//
+
+long reverse( long num)
+{ 
+    //printf("number being pased is : %ld \n", num);
+    long rev = 0;
+    while(num != 0)
+    {
+        rev = (rev * 10) + (num % 10);
+        num /= 10;
+    };
+    //printf("reverse number is %ld\n", rev);
+    return rev;
+}
+
 
 
 int main(void){
@@ -74,7 +89,7 @@ int main(void){
     while ((len < 13) || (len > 16) || (len == 14));
     printf(" your cardlength is %d\n", len);
     printf(" your card number in the main loop is %ld\t %ld\n", CardNum, CN);
-   checkSum(CardNum, len);
+    reverse(CardNum);
     return 0;
 }
 
@@ -87,7 +102,7 @@ string CardType(cn, l)
 }
 */
 
-void checkSum ( long num , int length)
+/*void checkSum ( long num , int length)
 {
     printf("number:    %ld\t %d\n", num,length);
     long odd_places_sum = 0, even_places_sum = 0;
@@ -112,5 +127,5 @@ void checkSum ( long num , int length)
         
     }
 
-};
+};*/
 
