@@ -36,13 +36,33 @@ int main(void){
     return 0;
 }
 
-
+--------------------------------------------------------------------------------------------------
+Revering a Card Number
 ---------------------------------------------------------------------------------------------------
+
+// function to reverse the cardnumber
+long reverse( long num)
+{ 
+    
+    //printf("number being pased is : %ld \n", num);
+    long rev = 0;
+    while(num != 0)
+    {
+        rev = (rev * 10) + (num % 10);
+        num /= 10;
+    }
+   printf("reverse number is %ld\n", rev);
+    return rev;
+}
+
+
+-----------------------------------------------------------------------------------------------------
+Actual code
+------------------------------------------------------------------------------------------------------
 #include <cs50.h>
 #include <stdio.h>
 
-
-//long reverse (long);
+int CheckSum(long);
 //void checkSum ( long , int);
 
 //AmericanEX - 15-digit, start with 34 or 37
@@ -51,25 +71,10 @@ int main(void){
 //CheckSum
 //
 
-long reverse( long num)
-{ 
-    //printf("number being pased is : %ld \n", num);
-    long rev = 0;
-    while(num != 0)
-    {
-        rev = (rev * 10) + (num % 10);
-        num /= 10;
-    };
-    //printf("reverse number is %ld\n", rev);
-    return rev;
-}
-
-
-
 int main(void){
     
     //declaring variables
-    long CardNum,CN;
+    long CardNum, CN;
     int len = 0, count = 0;
     
     //getting user input( no of digits shd be 13,15, or 16)
@@ -88,44 +93,53 @@ int main(void){
     }
     while ((len < 13) || (len > 16) || (len == 14));
     printf(" your cardlength is %d\n", len);
-    printf(" your card number in the main loop is %ld\t %ld\n", CardNum, CN);
-    reverse(CardNum);
+    printf(" your card number in the main loop is %ld\n", CardNum);
+    bool Validity = CheckSum(CardNum);
+    printf (" validity : %d\n",Validity);
     return 0;
 }
 
-/*
-string CardType(cn, l)
-{
-    string Type;
-    
-    return Type;
-}
-*/
 
-/*void checkSum ( long num , int length)
+
+int CheckSum(long Rcn)
 {
-    printf("number:    %ld\t %d\n", num,length);
-    long odd_places_sum = 0, even_places_sum = 0;
-    for (int i=length; i>0; i--)
-    { 
+    //long Rcn = reverse(CN);
+    printf("Rcn : %ld\n",Rcn);
+    int i = 1, EvenSum = 0 , OddSum = 0;
+    while(Rcn != 0)
+    {
         if(i % 2 == 0)
-        { 
-            printf("number is: %ld\n", num);
-            odd_places_sum += (num % 10);
-            num /= 10;
-            printf("Oddsum %ld\t %ld\n", odd_places_sum,num);
+        {
+            EvenSum += ((Rcn%10) * 2);
+            //printf("EvenSum : %d\n", EvenSum);
         } else 
         {
-             printf(" now number is: %ld\n", num);
-            even_places_sum += ((num % 10) * 2);
-            num /= 10;
-             printf("eeeeeeeven %ld\n", even_places_sum,);
+            OddSum += Rcn % 10;
+            //printf("OddSum : %d\n ", OddSum);
         }
         
-        
-        num /= 10;
-        
+        Rcn /= 10;
+        i++;
+            
     }
+    printf("EvenSum : %d\t OddSum : %d\n", EvenSum, OddSum);
+    
+    
+   int SumTotal = EvenSum + OddSum;
+    
+    printf("Sumtotal :%d\n", SumTotal);
+    
+    if (SumTotal % 10 == 0)
+    {
+        printf("returning 1\n");
+        return 1;
+    }else
+    {
+        printf("returning 0\n");
+        return 0;
+    }
+  
+}
 
-};*/
+
 
