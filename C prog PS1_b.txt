@@ -55,7 +55,7 @@ long reverse( long num)
     return rev;
 }
 
-
+371449635398431
 -----------------------------------------------------------------------------------------------------
 Actual code
 ------------------------------------------------------------------------------------------------------
@@ -63,7 +63,8 @@ Actual code
 #include <stdio.h>
 
 int CheckSum(long);
-//void checkSum ( long , int);
+void CardType(long, int);
+long reverse( long );
 
 //AmericanEX - 15-digit, start with 34 or 37
 //MasterCard - 16-digit, start with 51,52,53,54, or 55
@@ -71,31 +72,39 @@ int CheckSum(long);
 //CheckSum
 //
 
-int main(void){
-    
+int main(void)
+{
     //declaring variables
     long CardNum, CN;
     int len = 0, count = 0;
     
     //getting user input( no of digits shd be 13,15, or 16)
-    do
+    len = 0;
+    CardNum = get_long("Please Enter your Card Number : ");
+    CN = CardNum;
+    while (CN != 0)
     {
-        len =0;
-        CardNum = get_long("Please Enter your Card Number : ");
-        CN = CardNum;
-        while (CN != 0)
-        {
-            CN /= 10;
-            ++len;
-        }
-        printf("length : %d\n", len);
-                
+        CN /= 10;
+        ++len;
     }
-    while ((len < 13) || (len > 16) || (len == 14));
-    printf(" your cardlength is %d\n", len);
-    printf(" your card number in the main loop is %ld\n", CardNum);
-    bool Validity = CheckSum(CardNum);
-    printf (" validity : %d\n",Validity);
+    //printf("length : %d\n", len);
+    if ((len == 13) || (len == 16) || (len == 15))
+    {
+        bool Validity = CheckSum(CardNum); 
+        if (Validity)
+        {
+            //printf("cardnum %ld\t %d\n",CardNum,len);
+            CardType(CardNum,len);
+        }
+        else
+        {
+            printf("INVALID\n");
+        }
+    }
+    else
+    {
+        printf("INVALID\n"); 
+    }
     return 0;
 }
 
@@ -103,43 +112,127 @@ int main(void){
 
 int CheckSum(long Rcn)
 {
-    //long Rcn = reverse(CN);
-    printf("Rcn : %ld\n",Rcn);
-    int i = 1, EvenSum = 0 , OddSum = 0;
-    while(Rcn != 0)
+    
+    //printf("Rcn : %ld\n",Rcn);
+    int i = 1, EvenSum = 0, OddSum = 0;
+    while (Rcn != 0)
     {
-        if(i % 2 == 0)
+        if (i % 2 == 0)
         {
-            EvenSum += ((Rcn%10) * 2);
+            int x = (Rcn % 10) * 2;
+            int sum = 0;
+            while (x != 0)
+            {
+                sum += x % 10 ;
+                x /= 10;
+            }
+            EvenSum += sum;
             //printf("EvenSum : %d\n", EvenSum);
-        } else 
+        }
+        else 
         {
             OddSum += Rcn % 10;
             //printf("OddSum : %d\n ", OddSum);
         }
-        
         Rcn /= 10;
-        i++;
-            
+        i++;            
     }
-    printf("EvenSum : %d\t OddSum : %d\n", EvenSum, OddSum);
-    
-    
-   int SumTotal = EvenSum + OddSum;
-    
-    printf("Sumtotal :%d\n", SumTotal);
+    //printf("EvenSum : %d\t OddSum : %d\n", EvenSum, OddSum);
+    int SumTotal = EvenSum + OddSum;
+    //printf("Sumtotal :%d\n", SumTotal);
     
     if (SumTotal % 10 == 0)
     {
-        printf("returning 1\n");
+        //printf("returning 1\n");
         return 1;
-    }else
+    }
+    else
     {
-        printf("returning 0\n");
+        //printf("returning 0\n");
         return 0;
     }
   
 }
 
+void CardType(long CN, int len)
+{
+    long rev = reverse(CN);
+    //printf("%ld\t%d \n", rev,len);
+    
+    switch (len)
+    {
+        case 13: 
+            if (rev % 10 == 4)
+            {
+                printf("VISA\n"); 
+            }
+            else
+            {
+                printf("INVALID\n");
+            }
+            break;
+        case 15: 
+            if ((rev % 10) == 3)
+            { 
+                rev /= 10; 
+                if ((rev % 10 ==  4) || (rev % 10 == 7))
+                {
+                    printf("AMEX\n");
+                }
+                else
+                {
+                    printf("INVALID\n");
+                }            
+            }
+            else
+            {
+                printf("INVALID\n");
+                
+            }
+            break;
+
+        case 16: 
+            if (rev % 10 == 4)
+            {
+                printf("VISA\n"); 
+            }
+            else if (rev % 10 == 5)
+            {
+                rev /= 10;
+                int a = rev % 10;
+                if ((a <= 5) && (a >= 1))
+                {
+                    printf("MASTERCARD\n");
+                }
+                else
+                {
+                    printf("INVALID\n");
+                }
+            }
+            else
+            {
+                printf("INVALID\n");
+            }
+            break;
+        default: 
+            break;
+    }
+    
+}
 
 
+
+// function to reverse the cardnumber
+long reverse(long num)
+{ 
+    
+    //printf("number being pased is : %ld \n", num);
+    long rev = 0;
+    while (num != 0)
+    {
+        rev = (rev * 10) + (num % 10);
+        num /= 10;
+    }
+    //printf("reverse number is %ld\n", rev);
+    return rev;
+}
