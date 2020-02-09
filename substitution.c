@@ -7,7 +7,8 @@ int len(string);
 
 int main (int argc, char *argv[])
 {
-    int i, len ;
+    int i = 0 ;
+
     if (argc > 2)
     {
         printf("Usage: ./substitution key\n");
@@ -23,13 +24,14 @@ int main (int argc, char *argv[])
         printf("%s\t %s", argv[0], argv[1]);
     }
 
-    l = len(argv[1]);
-    printf("\n length is :%d\n", l);
+    //calculating the length of the key
 
-}
+    int len = strlen(argv[1]);
+    //printf("\n length is :%d\n", l);
 
-int len(string S)
-{
-    for (int i = 0; i!= "\0"; i++);
-    return i;
+    if (len != 26)
+    {
+        printf("Key must contain 26 characters.\n");
+    }
+
 }
