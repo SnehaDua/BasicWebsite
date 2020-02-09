@@ -42,13 +42,13 @@ int main(int argc, char *argv[])
                 if (isalpha(A[j]))
                 {
                     count++;
-                    printf("A[j]:  %c\n", A[j]);
+                    //printf("A[j]:  %c\n", A[j]);
                 }
 
                 j++;
             }
 
-            printf("COUNT %d", count);
+            //printf("COUNT %d", count);
             if (count != 26)
             {
                 printf("Key must only contain alphabetic characters.");
@@ -65,6 +65,7 @@ int main(int argc, char *argv[])
                 else
                 {
                     //further solution - using the key
+                     printf("so far so good");
                 }
             }
         }
@@ -75,7 +76,17 @@ int main(int argc, char *argv[])
 //function to find duplicates
 int duplicates(string A)
 {
-
+    for (int i = 0; i <26 ; i++)
+    {
+        for (int j = i+1; j < 26; j++)
+        {
+            if (A[i] == A[j])
+            {
+                return 1;
+            }
+        }
+    }
+    return 0;
 
 }
 
