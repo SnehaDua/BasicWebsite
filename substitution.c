@@ -4,9 +4,9 @@
 #include <ctype.h>
 
 
-int valid_key(string);
+int duplicates(string);
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
     int i = 0 ;
 
@@ -37,52 +37,49 @@ int main (int argc, char *argv[])
             //int a =  valid_key(argv[1]);
             string A = argv[1];
             int j = 0, count = 0;
-            while (j<=26)
+            while (j <= 26)
             {
-                if(isalpha(A[j]))
+                if (isalpha(A[j]))
                 {
                     count++;
-                    printf("A[j]:  %c\n",A[j]);
+                    printf("A[j]:  %c\n", A[j]);
                 }
 
                 j++;
             }
 
-            printf("COUNT %d",count);
+            printf("COUNT %d", count);
             if (count != 26)
             {
                 printf("Key must only contain alphabetic characters.");
                 return 1;
-            }else
+            }
+            else
             {
-                printf("so far so good");
+                int D = duplicates(argv[1]);
+                if (D != 0)
+                {
+                    printf("Key must not contain repeated characters");
+                    return 1;
+                }
+                else
+                {
+                    //further solution - using the key
+                }
             }
         }
 
     }
 }
 
-
-/*
-int valid_key(string A)
+//function to find duplicates
+int duplicates(string A)
 {
-    int j = 0;
-    while (isalpha(A[j]))
-    {
-        j++;
-    }
 
-    if (j != 26)
-    {
-        printf("Key must only contain alphabetic characters.");
-    }else
-    {
-        printf("so far so good");
-    }
-return 0;
+
 }
 
-*/
+
 
 
 
