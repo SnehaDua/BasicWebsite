@@ -3,7 +3,8 @@
 #include <string.h>
 #include <ctype.h>
 
-
+string get_ciphertext(string);
+string get_plaintext();
 int duplicates(string);
 
 int main(int argc, char *argv[])
@@ -64,14 +65,21 @@ int main(int argc, char *argv[])
                 }
                 else
                 {
+                    string p_text = get_plaintext();            // function call to get plain text from user
+                    string c_text = get_ciphertext(p_text);     // function call that converts plain text to cipher text
+
+                    printf("ciphertext :  %s\n", c_text);
+                    return 0;
+                    // prints the corresponding cipher text to the screen;
                     //further solution - using the key
-                    printf("so far so good");
+                    //printf("\nso far so good: \t %s", p_text);
                 }
             }
         }
 
     }
 }
+
 
 //function to find duplicates
 int duplicates(string A)
@@ -91,6 +99,17 @@ int duplicates(string A)
 }
 
 
+//function to get plain text from the user for conversion
+string get_plaintext()
+{
+    string text = get_string("plaintext : ");
+    //int len = strlen(text);
+    printf("you rntered: %s", text);
+    return text;
+}
 
+// function to convert plain text to cipher text
+string get_ciphertext(string P)
+{
 
-
+}
