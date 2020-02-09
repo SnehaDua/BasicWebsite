@@ -21,17 +21,20 @@ int main (int argc, char *argv[])
     }
     else
     {
-        printf("%s\t %s", argv[0], argv[1]);
+        //calculating the length of the key
+        int len = strlen(argv[1]);
+        //printf("\n length is :%d\n", l);
+
+        if (len != 26)
+        {
+            printf("Key must contain 26 characters.\n");
+        }
+
     }
 
-    //calculating the length of the key
 
-    int len = strlen(argv[1]);
-    //printf("\n length is :%d\n", l);
 
-    if (len != 26)
-    {
-        printf("Key must contain 26 characters.\n");
-    }
+
+
 
 }
