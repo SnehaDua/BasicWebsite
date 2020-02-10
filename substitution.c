@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
                     //printf("key :  %s\t %s\n", key, p_text);
                     get_ciphertext(p_text, key);     // function call that converts plain text to cipher text
 
-                   // printf("ciphertext :  %s\n", c_text);
+                    // printf("ciphertext :  %s\n", c_text);
                     return 0;
                     // prints the corresponding cipher text to the screen;
                     //further solution - using the key
@@ -130,14 +130,14 @@ int get_ciphertext(string P, string K)
             {
                 int y = P[i] - 65;
                 //printf("upper: %d\n", y);
-                C[i] = K[y];
+                C[i] = toupper(K[y]);
             }
             else
             {
                 int x = P[i] - 97;
                 //printf("lower: %d\n \t %c", x, K[x]);
-                C[i] = K[x];
-               // printf("\nc[i]: %c\t\n ", C[i]);
+                C[i] = tolower(K[x]);
+                // printf("\nc[i]: %c\t\n ", C[i]);
             }
         }
         else
@@ -148,6 +148,6 @@ int get_ciphertext(string P, string K)
 
     }
     //printf("C: %c\n", C[2]);
-    printf("ciphertext :  %s\n", C);
+    printf("ciphertext: %s\n", C);
     return 0;
 }
