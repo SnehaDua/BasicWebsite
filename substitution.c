@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
-string get_ciphertext(string);
+int get_ciphertext(string, string);
 string get_plaintext();
 int duplicates(string);
 
@@ -65,10 +65,12 @@ int main(int argc, char *argv[])
                 }
                 else
                 {
-                    string p_text = get_plaintext();            // function call to get plain text from user
-                    string c_text = get_ciphertext(p_text);     // function call that converts plain text to cipher text
+                    string p_text = get_plaintext();                    // function call to get plain text from user
+                    string key = argv[1];
+                    //printf("key :  %s\t %s\n", key, p_text);
+                    get_ciphertext(p_text, key);     // function call that converts plain text to cipher text
 
-                    printf("ciphertext :  %s\n", c_text);
+                   // printf("ciphertext :  %s\n", c_text);
                     return 0;
                     // prints the corresponding cipher text to the screen;
                     //further solution - using the key
@@ -104,12 +106,48 @@ string get_plaintext()
 {
     string text = get_string("plaintext : ");
     //int len = strlen(text);
-    printf("you rntered: %s", text);
+    //printf("you rntered: %s", text);
     return text;
 }
 
 // function to convert plain text to cipher text
-string get_ciphertext(string P)
+int get_ciphertext(string P, string K)
 {
+    //printf("string p: %s\n string k : %s\n", P, K);
+    int len = strlen(P);
+    //printf("length of P %d", len);
+    char C[len];
 
+    for (int i = 0; i <= len ; i++)
+    {
+        //printf("print c{i]: %s\n &p[i] %s\n", C[i], &P[i]);
+
+
+        if (isalpha(P[i]))
+        {
+            //intf("isupper(P[i]) %d \n", isupper(P[i]));
+            if (isupper(P[i]))
+            {
+                int y = P[i] - 65;
+                //printf("upper: %d\n", y);
+                C[i] = K[y];
+            }
+            else
+            {
+                int x = P[i] - 97;
+                //printf("lower: %d\n \t %c", x, K[x]);
+                C[i] = K[x];
+               // printf("\nc[i]: %c\t\n ", C[i]);
+            }
+        }
+        else
+        {
+            C[i] = P[i];
+            //printf("hiiiiiiii: %c\n", C[i]);
+        }
+
+    }
+    //printf("C: %c\n", C[2]);
+    printf("ciphertext :  %s\n", C);
+    return 0;
 }
