@@ -68,14 +68,22 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
-    for (int i = 0; i < candidate_count; i++)
+    // int CC = candidate_count;
+    for (int i = 0  ; i < candidate_count;)
     {
-        if (strcmp(name,candidates[i].name))
+        //printf(" hiiiiiiiiiiiiiiiii\n %s: %s : %d\n",candidates[i].name, name,candidates[i].votes );
+        //string C_name = candidates[i].name;
+        //printf("%s\n",C_name);
+        if (!strcmp(name, candidates[i].name))
         {
-            candidates[i].votes ++;
+            candidates[i].votes += 1;
+            //printf("%d\n",  candidates[i].votes);
+            //printf("while voting : \n I :%d\t naee of the candidate: %s \t votes: : %d\n",i,candidates[i].name, candidates[i].votes );
             return true;
         }
+        i++;
     }
+
     return false;
 }
 
@@ -86,15 +94,19 @@ void print_winner(void)
     int win = 0;
     for (int i = 0; i < candidate_count; i++)
     {
-        //int a = candidates[i].votes,
-       win =  max(win, candidates[i].votes);
-    }
 
+        if (win < candidates[i].votes)
+        {
+            win = candidates[i].votes;
+            //printf("while comparing:\n%s : %d\n",candidates[i].name,candidates[i].votes );
+        }
+    }
+    //printf("win: %d\n", win);
     for (int j = 0; j < candidate_count; j++)
     {
-        if(candidates[j].votes == win)
+        if (candidates[j].votes == win)
         {
-            printf("%s\n",candidates[j].name);
+            printf("%s\n", candidates[j].name);
         }
     }
     return ;
